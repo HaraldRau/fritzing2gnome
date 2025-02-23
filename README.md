@@ -1,7 +1,5 @@
 # fritzing2gnome
 Fritzing AppImage in GNOME installieren
-Hier ist deine Vorgehensweise in **Englisch**, damit du sie teilen kannst:  
-
 ---
 
 # **How to Integrate Fritzing AppImage into GNOME on Ubuntu/Debian**  
