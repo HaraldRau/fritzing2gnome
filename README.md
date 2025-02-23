@@ -42,9 +42,8 @@ xdg-icon-resource install --context mimetypes --size 128 fritzing_128.png applic
 xdg-icon-resource install --context mimetypes --size 256 fritzing_256.png application-x-fritzing
 ```
 This registers the icon in different sizes for better appearance across the system.  
-## **4️⃣ Create the `fritzing.desktop` Launcher**  
-mime default fritzing.desktop application/x-fritzing
-```
+## **4️⃣ Create the `fritzing.desktop` Launcher**
+
 First, create the file **`~/.local/share/applications/fritzing.desktop`** with the following content:  
 ```ini
 [Desktop Entry]
@@ -62,7 +61,8 @@ StartupNotify=true
 📌 **Replace `/home/user/Software/AppImage/fritzing/`** with the actual path to your **Fritzing AppImage** and **icon file**.  
 Then, associate Fritzing as the default application for its file type:  
 ```bash
-xdg-
+xdg-mime default fritzing.desktop application/x-fritzing
+```
 
 ## **5️⃣ Link Icons to Adwaita (Critical Step!)**  
 GNOME might not display the correct icons unless they are linked to the **Adwaita** icon theme:  
