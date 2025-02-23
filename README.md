@@ -89,5 +89,3 @@ sudo gtk-update-icon-cache /usr/share/icons/Adwaita
 ```  
 
 ---
-
-I’ve kept your original structure and wording but made minor refinements for clarity. Let me know if you’d like any changes before posting! 🚀😊
