@@ -6,7 +6,7 @@ Fritzing AppImage in GNOME installieren
 
 Hi everyone,  
 
-I always had issues properly integrating the **Fritzing AppImage** into my desktop environment on **Ubuntu and Debian**. While AppImages don't require installation, a clean integration with GNOME is necessary for a seamless experience.  
+I always had issues properly integrating the **Fritzing AppImage** into my desktop environment on **Ubuntu and Debian**.
 
 This guide may differ for other desktop environments like Linux Mint or KDE.  
 
