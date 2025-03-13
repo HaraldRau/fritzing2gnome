@@ -1,7 +1,7 @@
 # fritzing2gnome
 Fritzing AppImage in GNOME installieren
 
-**How to Integrate Fritzing AppImage into GNOME on Ubuntu/Debian**
+# How to Integrate Fritzing AppImage into GNOME on Ubuntu/Debian**
 <img src="fritzing.svg" alt="Fritzing">
 
 Hi everyone,  
@@ -11,6 +11,7 @@ I always had issues properly integrating the **Fritzing AppImage** into my deskt
 This guide may differ for other desktop environments like Linux Mint or KDE.  
 
 Here is the **step-by-step method** that finally worked for me:
+
 **1️⃣ Create the MIME Type File (`x-fritzing.xml`)**  
 This file defines a new MIME type for Fritzing-related file formats:  
 ```xml
@@ -27,12 +28,14 @@ This file defines a new MIME type for Fritzing-related file formats:
     </mime-type>
 </mime-info>
 ```
-This configuration ensures that **`.fz`, `.fzz`, `.fzpz`, `.fzb`, and `.fzbz`** files are recognized as Fritzing project files.  
+This configuration ensures that **`.fz`, `.fzz`, `.fzpz`, `.fzb`, and `.fzbz`** files are recognized as Fritzing project files.
+
 **2️⃣ Install the New MIME Type**  
 Run the following command to install the MIME type:  
 ```bash
 xdg-mime install x-fritzing.xml
 ```
+
 **3️⃣ Install the Icon**  
 I extracted the icon from the **Fritzing AppImage** and installed it with:  
 ```bash
@@ -41,6 +44,7 @@ xdg-icon-resource install --context mimetypes --size 128 fritzing_128.png applic
 xdg-icon-resource install --context mimetypes --size 256 fritzing_256.png application-x-fritzing
 ```
 This registers the icon in different sizes for better appearance across the system.  
+
 **4️⃣ Create the `fritzing.desktop` Launcher**
 
 First, create the file **`~/.local/share/applications/fritzing.desktop`** with the following content:  
