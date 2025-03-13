@@ -27,14 +27,14 @@ cat <<EOF > ~/.local/share/mime/packages/x-fritzing.xml
 </mime-info>
 EOF
 
-echo "✅ MIME type file created!"
+echo "MIME type file created!"
 
-echo "🔹 Step 2: Installing the new MIME type..."
+echo "Step 2: Installing the new MIME type..."
 xdg-mime install ~/.local/share/mime/packages/x-fritzing.xml
 update-mime-database ~/.local/share/mime
 echo "MIME type installed!"
 
-echo "🔹 Step 3: Installing icons..."
+echo "Step 3: Installing icons..."
 xdg-icon-resource install --context mimetypes --size 64 fritzing_64.png application-x-fritzing
 xdg-icon-resource install --context mimetypes --size 128 fritzing_128.png application-x-fritzing
 xdg-icon-resource install --context mimetypes --size 256 fritzing_256.png application-x-fritzing
@@ -64,7 +64,7 @@ sudo ln -sf ~/.local/share/icons/hicolor/256x256/mimetypes/application-x-fritzin
 sudo gtk-update-icon-cache /usr/share/icons/Adwaita
 echo "Icons linked and cache updated!"
 
-echo "🔹 Step 6: Restarting file manager..."
+echo "Step 6: Restarting file manager..."
 killall nautilus && nautilus &
 echo "Installation complete! Try opening a .fz or .fzz file to check if Fritzing opens correctly."
 
