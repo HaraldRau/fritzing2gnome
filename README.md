@@ -1,8 +1,7 @@
 # fritzing2gnome
 Fritzing AppImage in GNOME installieren
----
 
-# **How to Integrate Fritzing AppImage into GNOME on Ubuntu/Debian**
+**How to Integrate Fritzing AppImage into GNOME on Ubuntu/Debian**
 <img src="fritzing.svg" alt="Fritzing">
 
 Hi everyone,  
@@ -12,7 +11,7 @@ I always had issues properly integrating the **Fritzing AppImage** into my deskt
 This guide may differ for other desktop environments like Linux Mint or KDE.  
 
 Here is the **step-by-step method** that finally worked for me:
-## **1️⃣ Create the MIME Type File (`x-fritzing.xml`)**  
+**1️⃣ Create the MIME Type File (`x-fritzing.xml`)**  
 This file defines a new MIME type for Fritzing-related file formats:  
 ```xml
 <?xml version="1.0"?>
@@ -29,12 +28,12 @@ This file defines a new MIME type for Fritzing-related file formats:
 </mime-info>
 ```
 This configuration ensures that **`.fz`, `.fzz`, `.fzpz`, `.fzb`, and `.fzbz`** files are recognized as Fritzing project files.  
-## **2️⃣ Install the New MIME Type**  
+**2️⃣ Install the New MIME Type**  
 Run the following command to install the MIME type:  
 ```bash
 xdg-mime install x-fritzing.xml
 ```
-## **3️⃣ Install the Icon**  
+**3️⃣ Install the Icon**  
 I extracted the icon from the **Fritzing AppImage** and installed it with:  
 ```bash
 xdg-icon-resource install --context mimetypes --size 64 fritzing_64.png application-x-fritzing
@@ -42,7 +41,7 @@ xdg-icon-resource install --context mimetypes --size 128 fritzing_128.png applic
 xdg-icon-resource install --context mimetypes --size 256 fritzing_256.png application-x-fritzing
 ```
 This registers the icon in different sizes for better appearance across the system.  
-## **4️⃣ Create the `fritzing.desktop` Launcher**
+**4️⃣ Create the `fritzing.desktop` Launcher**
 
 First, create the file **`~/.local/share/applications/fritzing.desktop`** with the following content:  
 ```ini
@@ -65,7 +64,7 @@ Then, associate Fritzing as the default application for its file type:
 xdg-mime default fritzing.desktop application/x-fritzing
 ```
 
-## **5️⃣ Link Icons to Adwaita (Critical Step!)**  
+**5️⃣ Link Icons to Adwaita (Critical Step!)**  
 GNOME might not display the correct icons unless they are linked to the **Adwaita** icon theme:  
 ```bash
 sudo ln -s ~/.local/share/icons/hicolor/64x64/mimetypes/application-x-fritzing.png /usr/share/icons/Adwaita/64x64/mimetypes/application-x-fritzing.png
