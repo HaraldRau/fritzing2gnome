@@ -61,7 +61,7 @@ MimeType=application/x-fritzing;
 Categories=Development;
 StartupNotify=true
 ```
-📌 **Replace `/home/user/Software/AppImage/fritzing/`** with the actual path to your **Fritzing AppImage** and **icon file**.  
+**Replace `/home/user/Software/AppImage/fritzing/`** with the actual path to your **Fritzing AppImage** and **icon file**.  
 
 Then, associate Fritzing as the default application for its file type:  
 ```bash
