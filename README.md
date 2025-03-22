@@ -30,7 +30,7 @@ This file defines a new MIME type for Fritzing-related file formats:
 ```
 This configuration ensures that **`.fz`, `.fzz`, `.fzpz`, `.fzb`, and `.fzbz`** files are recognized as Fritzing project files.
 
-### 2️⃣ Install the New MIME Type**  
+### 2️⃣ Install the New MIME Type
 Run the following command to install the MIME type:  
 ```bash
 xdg-mime install x-fritzing.xml
@@ -68,7 +68,7 @@ Then, associate Fritzing as the default application for its file type:
 xdg-mime default fritzing.desktop application/x-fritzing
 ```
 
-### 5️⃣ Link Icons to Adwaita (Critical Step!)**  
+### 5️⃣ Link Icons to Adwaita (Critical Step!)
 GNOME might not display the correct icons unless they are linked to the **Adwaita** icon theme:  
 ```bash
 sudo ln -s ~/.local/share/icons/hicolor/64x64/mimetypes/application-x-fritzing.png /usr/share/icons/Adwaita/64x64/mimetypes/application-x-fritzing.png
