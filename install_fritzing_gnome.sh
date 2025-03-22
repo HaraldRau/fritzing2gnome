@@ -1,8 +1,29 @@
 #!/bin/bash
 
-# Set variables
-APPIMAGE_PATH="$HOME/Software/AppImage/fritzing/fritzing.AppImage"
-ICON_PATH="$HOME/Software/AppImage/fritzing/fritzing.svg"
+# Pfadeingabe in einer Schleife, bis eine gültige AppImage-Datei angegeben wird
+while true; do
+    read -p "Bitte gib den vollständigen Pfad zur Fritzing .AppImage-Datei ein: " APPIMAGE_PATH
+    if [ -f "$APPIMAGE_PATH" ]; then
+        echo "Die Datei wurde gefunden: $APPIMAGE_PATH"
+        break
+    else
+        echo "Die Datei wurde nicht gefunden. Bitte versuche es erneut oder STRG+C."
+    fi
+done
+
+# Pfadeingabe in einer Schleife, bis eine gültige ICON-Datei angegeben wird
+while true; do
+    read -p "Bitte gib den vollständigen Pfad zum Fritzing-Icon eingeben: " ICON_PATH
+    if [ -f "$ICON_PATH" ]; then
+        echo "Die Datei wurde gefunden: $ICON_PATH"
+        break
+    else
+        echo "Die Datei wurde nicht gefunden. Bitte versuche es erneut oder STRG+C."
+    fi
+done
+
+# Verzeichnisse anlegen
+
 
 # Ensure the necessary directories exist
 mkdir -p ~/.local/share/mime/packages
