@@ -2,30 +2,28 @@
 
 # Pfadeingabe in einer Schleife, bis eine gültige AppImage-Datei angegeben wird
 while true; do
-    read -p "Bitte gib den vollständigen Pfad zur Fritzing .AppImage-Datei ein: " APPIMAGE_PATH
+    read -p "Please enter the full path to the Fritzing .AppImage file: " APPIMAGE_PATH
     if [ -f "$APPIMAGE_PATH" ]; then
-        echo "Die Datei wurde gefunden: $APPIMAGE_PATH"
+        echo "The file exists: $APPIMAGE_PATH"
         break
     else
-        echo "Die Datei wurde nicht gefunden. Bitte versuche es erneut oder STRG+C."
+        echo "The file does not exist. Please try again or press CTRL+C to cancel."
     fi
 done
 
 # Pfadeingabe in einer Schleife, bis eine gültige ICON-Datei angegeben wird
 while true; do
-    read -p "Bitte gib den vollständigen Pfad zum Fritzing-Icon eingeben: " ICON_PATH
+    read -p "Please enter the full path to the Fritzing-Icon file: " ICON_PATH
     if [ -f "$ICON_PATH" ]; then
-        echo "Die Datei wurde gefunden: $ICON_PATH"
+        echo "The file exists: $ICON_PATH"
         break
     else
-        echo "Die Datei wurde nicht gefunden. Bitte versuche es erneut oder STRG+C."
+        echo "The file does not exist. Please try again or press CTRL+C to cancel."
     fi
 done
 
-# Verzeichnisse anlegen
+# Verzeichnisse pruefen oder anlegen
 
-
-# Ensure the necessary directories exist
 mkdir -p ~/.local/share/mime/packages
 mkdir -p ~/.local/share/icons/hicolor/64x64/mimetypes
 mkdir -p ~/.local/share/icons/hicolor/128x128/mimetypes
@@ -48,7 +46,7 @@ cat <<EOF > ~/.local/share/mime/packages/x-fritzing.xml
 </mime-info>
 EOF
 
-echo "MIME type file created!"
+echo "MIME type created!"
 
 echo "Step 2: Installing the new MIME type..."
 xdg-mime install ~/.local/share/mime/packages/x-fritzing.xml
